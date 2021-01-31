@@ -9,7 +9,15 @@ router.get('/', (req, res, next) => {
 
 router.get('/:id', (req, res, next) => {
 
-    res.json(cars.filter(car => car.id == parseInt(req.params.id)));
+    const found = cars.some(car => car.id === parseInt(req.params.id));
+
+    if (found) {
+        res.json(cars.filter(car => car.id == parseInt(req.params.id)));
+    } else {
+        //bad request
+        res.status(400).json("{}");
+    }
+
 
 });
 
