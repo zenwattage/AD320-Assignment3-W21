@@ -5,7 +5,6 @@ const router = express.Router();
 const cars = require('../data/cars.json');
 
 router.get('/', (req, res, next) => {
-    console.log(querystring.stringify());
     res.json(cars);
 });
 
