@@ -14,8 +14,7 @@ router.get('/:id', (req, res, next) => {
     if (found) {
         res.json(cars.filter(car => car.id == parseInt(req.params.id)));
     } else {
-        //bad request
-        res.status(400).json("{}");
+        res.status(200).json("{}");
     }
 
 
